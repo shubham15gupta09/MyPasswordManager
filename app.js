@@ -28,11 +28,27 @@ app
     .create(req.body)
     .then(r =>{
       console.log(`success` + r);
-      res.status(200).send(`<p><b>Successfull</b></p><a href="/"><button>Go Back</button></a>`);
+      res.status(200).send(`        <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>Home</title>
+        </head>
+        <body style="padding: 5px;margin: 5px;"><p><b>Successfull</b></p><a href="/"><button>Go Back</button></a>        </body>
+        </html>`);
     })
     .catch(e =>{
       console.log(`error` + e);
-      res.status(200).send(`<p><b>Error</b> + ${e} </p><a href="/save"><button>Try Again</button></a>`);
+      res.status(200).send(`        <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>Home</title>
+        </head>
+        <body style="padding: 5px;margin: 5px;"><p><b>Error</b> + ${e} </p><a href="/save"><button>Try Again</button></a>        </body>
+        </html>`);
     })
   })
   .post("/search",(req,res)=>{
@@ -43,11 +59,36 @@ app
     .then(r =>{
       console.log(`found` + r);
       console.log(r)
-      res.status(200).send(`<p><b>Found</b></p><p>Username : ${r[0].username}</p><p>Password : ${r[0].password}</p><a href="/"><button>Go Back</button></a>`);
+      res.status(200).send(
+        `
+        <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+  </head>
+  <body style="padding: 5px;margin: 5px;">
+        <p><b>Found</b></p><p>Username : ${r[0].username}</p><p>Password : ${r[0].password}</p><a href="/"><button>Go Back</button></a>
+        </body>
+        </html>
+        `);
     })
     .catch(e =>{
       console.log(`error` + e);
-      res.status(200).send(`<p><b>Error</b> + ${e} </p><a href="/save"><button>Try Again</button></a>`);
+      res.status(200).send(`
+      <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>Home</title>
+        </head>
+        <body style="padding: 5px;margin: 5px;">      
+      <p><b>Error</b> + ${e} </p><a href="/save"><button>Try Again</button></a>
+      </body>
+      </html> 
+      `);
     })
   })
   .listen(PORT, () => {
