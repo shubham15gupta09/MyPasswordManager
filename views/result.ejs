@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+  </head>
+  <body style="padding: 5px; margin: 5px;">
+    <% for(var itr of data) { %>
+    <div>
+      <p><b>Username</b> <br /><%=itr.username %></p>
+      <p><b>Password</b><br /><%=itr.password %></p>
+    </div>
+    <% } %>
+    <a href="/"><button>Go Back</button></a>
+  </body>
+</html>
