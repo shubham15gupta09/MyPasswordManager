@@ -1,5 +1,5 @@
 # My Password Manager
-Now no need to use the Google Password Manager . Privacy is important
+A web Application for Password Management
 
 ## Why ?
 I am afraid what Google does with my Password . So i made my own password manager
